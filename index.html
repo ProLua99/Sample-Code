@@ -103,9 +103,8 @@
   </style>
 </head>
 <body>
-  <h1>Stay pretty always Sarah Therese!</h1>
+  <h1>Pretty Sarah Therese!</h1>
   <button onclick="releaseFlowers()">Release Flowers</button>
-
   <script>
     function releaseFlowers() {
       const flowers = ['🌸', '🌼', '🌺', '💮', '🌻'];
@@ -117,7 +116,11 @@
         flower.style.animationDuration = 4 + Math.random() * 4 + 's';
         flower.style.fontSize = 24 + Math.random() * 20 + 'px';
         document.body.appendChild(flower);
-
         setTimeout(() => {
           flower.remove();
         }, 800
+      }
+    }
+  </script>
+</body>
+</html>
