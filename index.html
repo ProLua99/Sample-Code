@@ -15,6 +15,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      text-align: center;
     }
 
     h1 {
@@ -68,6 +69,37 @@
     button:hover {
       background: #ee5253;
     }
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      button {
+        font-size: 16px;
+        padding: 8px 16px;
+      }
+
+      .flower {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 1.6em;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 6px 12px;
+      }
+
+      .flower {
+        font-size: 18px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -88,9 +120,4 @@
 
         setTimeout(() => {
           flower.remove();
-        }, 8000);
-      }
-    }
-  </script>
-</body>
-</html>
+        }, 800
