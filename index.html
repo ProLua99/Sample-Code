@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pretty!</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to top right, #fdf0f0, #ffe8f0);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #ffffff;
+      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff1493;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4;
+      }
+      to {
+        text-shadow: 0 0 20px #ff1493, 0 0 30px #ff69b4;
+      }
+    }
+
+    .flower {
+      position: absolute;
+      font-size: 30px;
+      bottom: -50px;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background: #ff6b81;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #ee5253;
+    }
+  </style>
+</head>
+<body>
+  <h1>Stay pretty always Sarah Therese!</h1>
+  <button onclick="releaseFlowers()">Release Flowers</button>
+
+  <script>
+    function releaseFlowers() {
+      const flowers = ['🌸', '🌼', '🌺', '💮', '🌻'];
+      for (let i = 0; i < 30; i++) {
+        const flower = document.createElement('div');
+        flower.classList.add('flower');
+        flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+        flower.style.left = Math.random() * 100 + 'vw';
+        flower.style.animationDuration = 4 + Math.random() * 4 + 's';
+        flower.style.fontSize = 24 + Math.random() * 20 + 'px';
+        document.body.appendChild(flower);
+
+        setTimeout(() => {
+          flower.remove();
+        }, 8000);
+      }
+    }
+  </script>
+</body>
+</html>
